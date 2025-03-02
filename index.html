@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="status">
+        <p id="energy">⚡ Energy: <span id="energy-count">5</span></p>
+        <div class="energy-bar-container">
+            <div class="energy-bar" id="energy-bar"></div>
+        </div>
+    </div>
+    <p id="coins">🪙 Coins: <span id="coin-count">0</span></p>
+</div>
+
+
+
+    <!-- Menu Screen -->
+    <div id="menuScreen">
+        <h1 class="title">🎯 Number Guessing Game</h1>
+
+        <label for="difficulty" class="difficulty-label">Select Difficulty:</label>
+        <select id="difficulty" class="difficulty-select">
+            <option value="50">Easy (1-50)</option>
+            <option value="100" selected>Normal (1-100)</option>
+            <option value="200">Hard (1-200)</option>
+        </select>
+
+        <button id="startGame" class="btn">Start Game</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="hidden">
+        <h2>Guess the number between <span id="range">1 and 100</span></h2>
+
+        <label for="guess" class="sr-only">Enter your guess:</label>
+        <input type="number" id="guess" placeholder="Enter your guess" min="1" max="100">
+        
+        <button id="submitGuess" class="btn">Submit</button>
+
+        <p>Attempts: <span id="attempts">0</span> / 10</p>
+        <p>Score: <span id="score">0</span></p>
+        <p id="hint"></p>
+        <p id="motivation"></p>
+
+        <button id="exitGame" class="btn exit-btn">Exit</button>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalBackdrop" class="modal-backdrop hidden"></div>
+
+    <div id="winModal" class="modal hidden">
+        <h2>🎉 You Won!</h2>
+        <p id="winMessage"></p>
+        <button id="tryAgainWin" class="btn tryAgain">Try Again</button>
+    </div>
+
+    <div id="loseModal" class="modal hidden">
+        <h2>😢 You Lost</h2>
+        <p id="loseMessage"></p>
+        <button id="tryAgainLose" class="btn tryAgain">Try Again</button>
+    </div>
+
+    <script src="script.js"></script>
+	<div class="footer">
+    <p>🎮 Number Guessing Game | Created by <a href="#">Ryan Joseph L. Cañano</a></p>
+</div>
+
+</body>
+</html>
